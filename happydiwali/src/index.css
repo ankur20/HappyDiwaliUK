@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: #fbf8f3;
+  color: #3f281b;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-decorative {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+/* Custom styles for flickering lights */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8)) drop-shadow(0 0 15px rgba(239, 68, 68, 0.4));
+  }
+  50% {
+    transform: scale(1.06) translateY(-2px);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 1)) drop-shadow(0 0 22px rgba(239, 68, 68, 0.6));
+  }
+  25%, 75% {
+    transform: scale(0.96) translateY(1px);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.7)) drop-shadow(0 0 12px rgba(239, 68, 68, 0.3));
+  }
+}
+
+.diya-flame-flicker {
+  animation: flicker 2s infinite ease-in-out;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.sparkle-slow {
+  animation: sparkle 4s infinite ease-in-out;
+}
+
+.sparkle-fast {
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+/* Glow animation */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.pulse-glow-gold {
+  animation: pulse-glow 4s infinite ease-in-out;
+}
+
+/* Custom scrollbar for light traditional look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fbf8f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #d97706;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
