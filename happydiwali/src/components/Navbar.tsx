@@ -87,10 +87,17 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
               >
                 {item.name}
                 {activeSection === item.id && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-amber-550 to-amber-700 rounded-full shadow-[0_0_6px_rgba(217,119,6,0.3)]"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-amber-500 to-amber-700 rounded-full shadow-[0_0_6px_rgba(217,119,6,0.3)]"></span>
                 )}
               </button>
             ))}
+            <a
+              href="/calculator/"
+              className="px-3 py-1.5 text-sm font-medium tracking-wide text-stone-600 hover:text-amber-700 transition-all duration-300 flex items-center gap-1 cursor-pointer font-bold bg-amber-500/10 hover:bg-amber-500/20 rounded-full border border-amber-500/10"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
+              <span>Calculators</span>
+            </a>
           </div>
 
           {/* Right CTA Button (Send Greetings) */}
@@ -132,9 +139,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection 
                   {item.name}
                 </button>
               ))}
+              <a
+                href="/calculator/"
+                className="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold text-amber-950 bg-amber-500/10 hover:bg-amber-500/20 transition-all flex items-center gap-2"
+              >
+                <Sparkles className="w-4 h-4 text-amber-600 animate-pulse" />
+                <span>Interactive Calculators</span>
+              </a>
               <button
                 onClick={() => handleNavClick('greetings')}
-                className="w-full mt-2 py-3 rounded-xl bg-amber-600 text-center text-xs font-bold uppercase tracking-wider text-white hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                className="w-full mt-1 py-3 rounded-xl bg-amber-600 text-center text-xs font-bold uppercase tracking-wider text-white hover:opacity-90 transition-all flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
                 Send Greeting Card
