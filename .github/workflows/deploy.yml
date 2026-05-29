@@ -39,30 +39,15 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-          cache-dependency-path: |
-            happydiwali/pnpm-lock.yaml
-            calculator/pnpm-lock.yaml
+          cache-dependency-path: happydiwali/pnpm-lock.yaml
 
-      - name: Install dependencies (Main Site)
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
         working-directory: happydiwali
 
-      - name: Install dependencies (Calculator)
-        run: pnpm install --frozen-lockfile
-        working-directory: calculator
-
-      - name: Build Main Site
+      - name: Build
         run: pnpm run build
         working-directory: happydiwali
-
-      - name: Build Calculator
-        run: pnpm run build
-        working-directory: calculator
-
-      - name: Merge Calculator Build Into Main Site
-        run: |
-          mkdir -p happydiwali/dist/calculator
-          cp -r calculator/dist/* happydiwali/dist/calculator/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
